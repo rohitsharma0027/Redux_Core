@@ -3,9 +3,12 @@ const redux = require('redux');
 // step 2 Reducer
 const counterReducer = (state = {counter : 0 },action) =>
 {
-    return {
-      counter:state.counter+1
-    };
+    if(action.type === "increment")
+    {
+    return { counter:state.counter+1 }
+    }
+
+    return state
 }
 
 // step 1
